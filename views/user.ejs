@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+	<%- include("partials/head") %>
+<body>
+
+	<header class="header d-flex space align-center">
+		<h2 class="nav-title"><a href="">User Authentication</a></h2>
+
+		<div class="d-flex align-center">
+			<img src="/assets/uploads/<%= user.picture %>" class="photo">
+		</div>
+	</header>
+
+	<div class="user-container">
+			<div class="d-flex align-center space">
+				<h3 class="text">Welcome <%= user.username %></h3>
+				<a  class="link logout" href="/logout/basic">LogOut</a>	
+			</div>
+			
+			<div class="table-wrapper">
+				<table class="table">
+					<caption>User Profile</caption>
+					<tr>
+						<th>ID</th>
+						<th>Username</th>
+						<th>Password</th>
+						<th>Role</th>
+						<th>Picture</th>
+					</tr>
+					<tr>
+						<td><%= user.id %></td>
+						<td><%= user.username %></td>
+						<td><%= user.password %></td>
+						<td><%= user.role %></td>
+						<td><img src="/assets/uploads/<%= user.picture %>" class="user"></td>
+					</tr>
+				</table>				
+			</div>
+
+	</div>
+		
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+	<%- include("partials/head") %>
+<body>
+
+	<%- include("./partials/adminHeader.ejs") %>
+
+	<div class="user-container">
+			
+			<h3 class="text">List of Users</h3>
+
+			<div id="message"></div>
+
+			<% if(users.length > 0){ %>
+			<div class="table-wrapper">
+				<table class="table">
+					
+					<tr>
+						<th>ID</th>
+						<th>Username</th>
+						<th>Role</th>
+						<th>Picture</th>
+						<th>Creation Date</th>
+						<th>Action</th>
+					</tr>
+				<% users.forEach(user => { %>
+					<tr>
+						<td><%= user.id%></td>
+						<td><%= user.username%></td>
+						<td><%= user.role%></td>
+						<td><img src="/assets/uploads/<%= user.picture %>" class="user"></td>
+						<td><%= new Date(user.createdAt).toUTCString() %> </td>
+						<td><button id="update" data-id="<%= user.id%>" class="btn btn-success">Update Role</button> || <button id="delete" data-id="<%= user.id%>" class="btn btn-danger">Delete</button></td>
+					</tr>
+
+				<% }) %>
+					
+				</table>				
+			</div>
+			<%} else{%>
+				<p>No Users Available</p>
+			<%}%>
+
+	</div>
+		
+</body>
+</html>

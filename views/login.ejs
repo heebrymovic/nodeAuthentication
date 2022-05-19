@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<%- include("partials/head") %>
+<body>
+		
+		<div class="wrapper">
+			<div class="container-wrapper">
+				<h2 class="text">User Login</h2>
+
+				<div id="message"></div>
+				
+
+				<div class="form-wrapper">
+					<form id="form" class="d-flex form flex-col">
+						<div class="form-group d-flex flex-col">
+							<label class="label">Username</label>
+							<input type="text" class="input" id="username" name="username">
+						</div>
+
+						<div class="form-group d-flex flex-col">
+							<label class="label">Password</label>
+							<input type="password" class="input" id="password" name="password">
+						</div>
+
+						<div class="form-group d-flex flex-col">
+							<button class="form-btn">Login</button>
+						</div>
+					</form>
+				</div>
+
+				<p class="form-desc">Dont Have an Account? <a class="link" href="/register">Register</a> </p>
+				<a href="/" class="link">Go Home</a>
+			</div>
+		</div>
+
+</body>
+</html>
