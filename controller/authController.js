@@ -75,6 +75,7 @@ exports.login = async( req, res ) => {
 					expiresIn:maxAge
 				})
 
+				console.log( signToken )
 
 				res.cookie(`jwt${user.role}`,signToken,{ maxAge: maxAge * 1000 })
 

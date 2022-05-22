@@ -3,6 +3,6 @@ const dotenv = require("dotenv");
 
 const {parsed:env} = dotenv.config();
 
-const {SecretKey} = env;
+const {SecretKey,port} = env;
 
-module.exports = {SecretKey}
+module.exports = {SecretKey,port}
