@@ -10,4 +10,5 @@ const {userIndex} = require("../controller/userController")
 
 userRoute.route("/user/:id").get(userAuth, userIndex)
 
+
 module.exports = {userRoute}

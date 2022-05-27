@@ -11,7 +11,7 @@
 *{ box-sizing: border-box; margin: 0;}
 body,html{padding: 0; margin: 0;background: var(--bgcolor); }
 a{ text-decoration: none; color: var(--color-white);}
-
+input::placeholder{color: var(--color-white);}
 .header{ width: 100%; padding: 20px;height: 70px; box-shadow: 0 1px 10px #333; background: var(--color-white);}
 .nav-title a{color: var(--color-green);}
 .header > div{gap: 10px;}
@@ -27,6 +27,7 @@ a{ text-decoration: none; color: var(--color-white);}
 .text-heading{ font-size: 2rem; color: var(--color-white);}
 .text{ font-size: 2rem; color: var(--color-white); }
 .btn{ padding: 10px; border: none; color: var(--color-white); border-radius: 5px; cursor: pointer; white-space: nowrap;}
+.form-btn[disabled]{background: #c0c0c0; cursor: not-allowed;}
 .btn-danger{ background: var(--red); }
 .btn-success{ background: var(--color-green); }
 
@@ -34,8 +35,9 @@ a{ text-decoration: none; color: var(--color-white);}
 .container-wrapper{ border: 2px solid var(--greenLight); max-width: 410px; padding: 30px; margin: auto; border-radius: 10px;}
 .form-wrapper{ margin: 20px 0; }
 .form{gap: 20px;}
-.error-msg, .success-msg{ background: var(--red); opacity: 1; margin: 20px 0; text-align: left; padding: 10px ; color: var(--color-white); transition: opacity 0.5s ease;}
+.error-msg, .success-msg{ background: var(--red); opacity: 1;margin: 20px 0; text-align: left; padding: 10px ; color: var(--color-white); transition: opacity 0.5s ease;}
 .success-msg{ background: var(--color-green); }
+.success-msg span{word-break: break-all; color: var(--dark); font-weight: bold;}
 .fade{ opacity: 0; }
 .display{ display: none; }
 .form-group{ text-align: left; gap: 12px;}
@@ -59,3 +61,4 @@ tr:nth-child(even){ background: var(--color-green); }
 .nav-link{ color: var(--color-green); }
 .navigation{ gap:20px; }
 .user{ width: 50px; height: 50px; object-fit: cover; }
+.list{ list-style: none; color:var(--color-white);margin: 20px 0; }

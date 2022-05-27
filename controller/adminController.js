@@ -5,6 +5,7 @@ let userId = "";
 
 exports.adminIndex = async (req, res) => {
 
+
 	 userId = req.params.id;
 
 	try{

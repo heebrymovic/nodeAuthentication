@@ -22,13 +22,14 @@ exports.users = (req, res) => {
 
 exports.logout = (req, res) => {
 	
-	const type = req.params.type
-	res.cookie(`jwt${type}`, "", {maxAge:"-1"} )
+	const type = req.params.type;
 
+	res.cookie(`jwt${type}`, "", {maxAge:-1} );
+	
 	res.redirect("/login")
 
 }
 
 exports.error = (req, res) => {
-	res.status(404).render("404", {title:"Error 404", error:"Page Could not be found"});
+	res.status(404).render("404", {title:"Error 404", error:"Page Could not be found, Kindly Contact the Administrator"});
 }

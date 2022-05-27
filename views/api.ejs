@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+	<%- include("partials/head") %>
+<body>
+
+	<div class="wrapper">
+			<div class="container-wrapper">
+				<h2 class="text">Test Get Api</h2>
+
+				<div id="message"></div>
+
+				<div class="form-wrapper">
+					<h4 class="link">Api Endpoints</h4>
+					<p class="link">The api test Limit is 20 per Day</p>
+					<ul class="list">
+						<li>http://localhost:2500/v1/api/users?apikey=myTestKey (GET)</li>
+					</ul>
+					<form id="form" class="d-flex form flex-col" method="POST">
+						<div class="form-group d-flex flex-col">
+							<label class="label">Enter Endpoints With Api Key</label>
+							<input type="text" class="input" id="api" name="api" required>
+						</div>
+						<div class="form-group d-flex flex-col">
+							<button class="form-btn form-btn1">Test Api</button>
+						</div>
+					</form>
+				</div>
+
+				<a href="/" class="link">Go Home</a>
+			</div>
+		</div>	
+
+
+		<div class="wrapper">
+			<div class="container-wrapper">
+				<h2 class="text">Test Post Api</h2>
+
+				<div id="message"></div>
+
+				<div class="form-wrapper">
+					<h4 class="link">Api Endpoints</h4>
+					<p class="link">The api test Limit is 20 per Day</p>
+					<ul class="list">
+						<li>http://localhost:2500/v1/api/users?apikey=myTestKey (POST)</li>
+					</ul>
+					<form id="form1" class="d-flex form flex-col" method="POST" enctype="multipart/form-data">
+						<div class="form-group d-flex flex-col">
+							<label class="label">Username</label>
+							<input required type="text" class="input" id="username" name="username">
+						</div>
+
+						<div class="form-group d-flex flex-col">
+							<label class="label">Password</label>
+							<input type="password" required class="input" id="password" name="password">
+						</div>
+
+						<div class="form-group d-flex flex-col">
+							<label class="label">Image</label>
+							<input type="file" required class="input" id="photo" name="photo">
+						</div>
+						<div class="form-group d-flex flex-col">
+							<label class="label">Enter Endpoints With Api Key</label>
+							<input type="text" class="input" id="api" name="" placeholder="" required>
+						</div>
+						<div class="form-group d-flex flex-col">
+							<button class="form-btn form-btn2">Test Api</button>
+						</div>
+					</form>
+				</div>
+
+				<a href="/" class="link">Go Home</a>
+			</div>
+		</div>	
+
+</body>
+</html>

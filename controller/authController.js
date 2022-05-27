@@ -1,4 +1,4 @@
-
+	
 const {UserModel} = require("../model/userModel"); 
 
 const bcryptjs = require("bcryptjs");
@@ -74,8 +74,6 @@ exports.login = async( req, res ) => {
 				const signToken = jwt.sign({ id:user._id, username, password },SecretKey,{
 					expiresIn:maxAge
 				})
-
-				console.log( signToken )
 
 				res.cookie(`jwt${user.role}`,signToken,{ maxAge: maxAge * 1000 })
 

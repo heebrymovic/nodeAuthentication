@@ -1,35 +1,31 @@
-
-const express =  require("express");
-
-const app = express();
-
-const { connectDb,authRoute,
+const { app, express,
+		connectDb,authRoute,
 		basicRoute,adminRoute,
-		userRoute,error,
-		cookieParser
+		userRoute,cookieParser, 
+		devRoute, nocache 
 	} = require("./serverDependency") 
 
 connectDb( app.listen.bind(app))
 
 app.set("view engine", "ejs");
 
-app.use( express.static("./public") )
+app.use(nocache());
 
 app.use(cookieParser());
 
 app.use(express.urlencoded({extended:true}))
 
-app.use( express.json());
+app.use( express.json())
 
-app.use("/api/auth", authRoute);
+app.use( express.static("./public") )
 
-app.use(basicRoute);
+app.use("/api/auth", authRoute)
 
-app.use(adminRoute);
+app.use(adminRoute, userRoute)
 
-app.use(userRoute);
+app.use(devRoute, basicRoute)
 
-app.use(error)
+
 
 
 

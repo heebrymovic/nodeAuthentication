@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const {SecretKey} = require("../config");
 
 async function loadAuth(token, res, next) {
+	
 	if( token ){
 
 		try{
@@ -12,15 +13,15 @@ async function loadAuth(token, res, next) {
 			if( decoded.id && decoded.password){
 				next();
 			} else{
-				res.status(401).json({message:"Not Authorized"})
+				res.redirect("/login")
 			}
 
 		} catch(err){
-			res.status(401).json({message:"Not Authorized", error:err.message})
+			res.redirect("/login")
 		}
 
 	} else{
-		res.status(401).json({message:"Not Authorized, Token Not Available"})
+		res.redirect("/login")
 	}
 }
 

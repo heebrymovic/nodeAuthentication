@@ -1,3 +1,6 @@
+const express =  require("express");
+
+const app = express();
 
 const {connectDb} = require("./model/db");
 
@@ -9,16 +12,16 @@ const {adminRoute} = require("./routes/adminRoute");
 
 const {userRoute} = require("./routes/userRoute");
 
-const {error} = require("./controller/basicController");
+const {devRoute} = require("./routes/devRoute");
 
 const cookieParser = require("cookie-parser");
 
+const nocache = require('nocache');
+
 module.exports = { 
-	connectDb,
-	authRoute,
-	basicRoute,
-	adminRoute,
-	userRoute,
-	error,
-	cookieParser
+	express,app,
+	connectDb,authRoute,
+	basicRoute,	adminRoute,
+	userRoute,cookieParser, 
+	devRoute, nocache
 }
